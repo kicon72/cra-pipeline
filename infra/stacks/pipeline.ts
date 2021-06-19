@@ -65,21 +65,21 @@ export class Pipeline extends CDK.Stack {
     })
 
     // AWS CodePipeline stage to deployt CRA website and CDK resources
-    pipeline.addStage({
-      stageName: 'Deploy',
-      actions: [
-        // AWS CodePipeline action to deploy CRA website to S3
-        new CodePipelineAction.S3DeployAction({
-          actionName: 'Website',
-          input: outputWebsite,
-          bucket: bucketWebsite,
-        }),
-      ],
-    })
+    // pipeline.addStage({
+    //   stageName: 'Deploy',
+    //   actions: [
+    //     // AWS CodePipeline action to deploy CRA website to S3
+    //     new CodePipelineAction.S3DeployAction({
+    //       actionName: 'Website',
+    //       input: outputWebsite,
+    //       bucket: bucketWebsite,
+    //     }),
+    //   ],
+    // })
 
-    new CDK.CfnOutput(this, 'WebsiteURL', {
-      value: bucketWebsite.bucketWebsiteUrl,
-      description: 'Website URL',
-    })
+    // new CDK.CfnOutput(this, 'WebsiteURL', {
+    //   value: bucketWebsite.bucketWebsiteUrl,
+    //   description: 'Website URL',
+    // })
   }
 }
