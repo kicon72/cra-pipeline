@@ -40,7 +40,7 @@ export class Pipeline extends CDK.Stack {
           actionName: 'Checkout',
           owner: props.github.owner,
           repo: props.github.repository,
-          oauthToken: CDK.SecretValue.secretsManager('GitHubToken'),
+          oauthToken: CDK.SecretValue.secretsManager('github.com/kicon72/cra-pipeline'),
           output: outputSources,
           trigger: CodePipelineAction.GitHubTrigger.WEBHOOK,
         }),
